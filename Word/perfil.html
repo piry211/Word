@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Piry</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <div id="profile-page">
+        <div class="profile-sidebar">
+            <h2>Profile</h2>
+            <button id="edit-profile-btn" onclick="openProfileEdit()">Edit Profile</button>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="default-avatar.png" alt="Avatar" id="avatar-image">
+                    <button id="change-avatar-btn" onclick="openAvatarUpload()">Change Avatar</button>
+                </div>
+                <h1 id="username-display">Username</h1>
+            </div>
+            <div class="profile-details">
+                <h2>Personalize Your Profile</h2>
+                <label for="profile-color">Profile Color:</label>
+                <input type="color" id="profile-color" onchange="changeProfileColor()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Edit Modal -->
+    <div id="profile-edit-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeProfileEdit()">&times;</span>
+            <h2>Edit Profile</h2>
+            <label for="edit-username">Username:</label>
+            <input type="text" id="edit-username">
+            <button onclick="saveProfileChanges()">Save</button>
+            <button onclick="closeProfileEdit()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Avatar Upload Modal -->
+    <div id="avatar-upload-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAvatarUpload()">&times;</span>
+            <h2>Upload New Avatar</h2>
+            <input type="file" id="avatar-upload" accept="image/*">
+            <button onclick="uploadAvatar()">Upload</button>
+            <button onclick="closeAvatarUpload()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="perfil.js"></script>
+</body>
+</html>

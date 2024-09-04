@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piry</title>
+    <link rel="stylesheet" href="piry.css">
+</head>
+<body>
+    <div id="main-page">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Servers</h2>
+            <ul id="server-list">
+                <!-- Existing servers will be listed here -->
+            </ul>
+            <button id="create-server-btn" onclick="openServerModal()">+ Create Server</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <h1>Piry</h1>
+                <button id="profile-btn" onclick="window.location.href='perfil.html'">Perfil</button>
+            </div>
+            <div class="chat-section" id="chat-section">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="bottom-bar">
+                <input type="text" id="message-input" placeholder="Type a message..." disabled>
+                <button onclick="sendMessage()" id="send-btn" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="piry.js"></script>
+</body>
+</html>
+
+    <!-- Create Server Form -->
+    <div id="create-server-form" class="hidden">
+        <h2>Create a Server</h2>
+        <input type="text" id="new-server-name" placeholder="Enter server name">
+        <button onclick="createServer()">Create</button>
+        <button onclick="hideCreateServerForm()">Cancel</button>
+    </div>
+
+    <!-- Add Friend Form -->
+    <div id="add-friend-form" class="hidden">
+        <h2>Add a Friend</h2>
+        <input type="text" id="friend-username" placeholder="Enter friend's username">
+        <button onclick="addFriend()">Add</button>
+        <button onclick="hideAddFriendForm()">Cancel</button>
+    </div>
+
+    <!-- User Settings Modal -->
+    <div id="user-settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeUserSettings()">&times;</span>
+            <h2>User Settings</h2>
+            <input type="text" id="username" placeholder="Enter username">
+            <button onclick="saveSettings()">Save Settings</button>
+            <button onclick="closeUserSettings()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="piry.js"></script>
+</body>
+</html>
